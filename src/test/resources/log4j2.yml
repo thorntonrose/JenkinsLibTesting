@@ -1,0 +1,15 @@
+Configuration:
+   appenders:
+      File:
+         name: File
+         fileName: build/test.log
+         createOnDemand: true
+         append: true
+         bufferedIO: false
+         PatternLayout:
+            Pattern: "%d{HH:mm:ss.SSS} %-5p %c{1} - %m%n"
+   Loggers:
+      Root:
+         level: DEBUG
+         AppenderRef:
+            ref: File

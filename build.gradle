@@ -1,5 +1,6 @@
 plugins {
 	id "groovy"
+	id "org.sonarqube" version "2.6.2"
 }
 
 group = "com.disney.dss.dpe"
@@ -11,8 +12,28 @@ repositories {
 
 dependencies {
 	compile "org.codehaus.groovy:groovy-all:2.5.0"
+
 	testCompile "com.lesfurets:jenkins-pipeline-unit:1.1"
 	testCompile "junit:junit:4.12"
+	// testCompile "org.apache.logging.log4j:log4j-slf4j-impl:2.8.1"
+
+	// runtime "org.apache.logging.log4j:log4j-core:2.8.1"
+	// runtime "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.6"
+	// runtime "com.fasterxml.jackson.core:jackson-databind:2.8.6"
+}
+
+sourceSets {
+	main {
+		groovy {
+			srcDirs "vars"
+		}
+	}
+}
+
+sonarqube {
+	properties {
+	 	property "sonar.groovy.binaries", "$buildDir/classes/groovy/main"
+	}
 }
 
 test {
