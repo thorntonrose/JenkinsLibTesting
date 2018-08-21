@@ -1,10 +1,9 @@
 plugins {
 	id "groovy"
-	id "com.bmuschko.clover" version "2.2.1"
 	id "org.sonarqube" version "2.6.2"
 }
 
-group = "com.disney.dss.dpe"
+group = "com.github.thorntonrose"
 version = "1.0.0"
 
 repositories {
@@ -21,30 +20,15 @@ dependencies {
 	// runtime "org.apache.logging.log4j:log4j-core:2.8.1"
 	// runtime "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.6"
 	// runtime "com.fasterxml.jackson.core:jackson-databind:2.8.6"
-
-	clover 'org.openclover:clover:4.2.0'
 }
 
-sourceSets {
-	main {
-		groovy {
-			srcDirs "vars"
-		}
-	}
-}
-
-clover {
-	report {
-		//html = true
-		xml = true
-	}
-}
-
-sonarqube {
-	properties {
-		property "sonar.clover.reportPath", "$buildDir/reports/clover/clover.xml"
-	}
-}
+// sourceSets {
+// 	main {
+// 		groovy {
+// 			srcDirs "vars"
+// 		}
+// 	}
+// }
 
 test {
     // delete old test reports
