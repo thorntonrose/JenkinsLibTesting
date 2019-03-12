@@ -4,6 +4,6 @@ def call() {
 	echo "Foo.call"
 }
 
-def baz = {
+baz = {
 	echo "baz"
 }
