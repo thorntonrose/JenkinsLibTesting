@@ -1,7 +1,9 @@
 package foo
 
 class Bar {
+	def ctx
+
 	def call() {
-		echo "Bar.call"
+		ctx.echo "Bar.call"
 	}
 }
