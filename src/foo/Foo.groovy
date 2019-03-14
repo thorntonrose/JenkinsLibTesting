@@ -1,9 +1,5 @@
 package foo
 
-def call() {
-	echo "Foo.call"
-}
-
-baz = {
-	echo "baz"
+def call(Map opts = [:]) {
+	echo "Foo.call: $opts"
 }
